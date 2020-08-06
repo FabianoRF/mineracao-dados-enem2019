@@ -17,7 +17,7 @@ for i in range(0, qtdRegistros):
 
 #algoritmo apriori
 regrasDeAssociacao= apriori(arrayRegistros, 
-                            min_support=0.02, #o maior valor possivel para o suporte é: 0,05
+                            min_support=0.02, 
                             min_confidence=0.2, 
                             min_lift= 2, 
                             min_length=2)
@@ -35,8 +35,8 @@ for item in resultadosDaAssociacao:
     items = [x for x in pair]
     print('resul items ',items)
     
-    value0= str(items[0])#pega o pedido 1
-    value1= str(items[1])#pega o pedido 2
+    value0= str(items[0])
+    value1= str(items[1])
     value2= str(item[1])[:7]#pega o valor de suporte
     value3= str(item[2][0][2])[:7]#pega o valor de confiança
     value4= str(item[2][0][3])[:7]#pega o valor do lift
@@ -49,4 +49,4 @@ for item in resultadosDaAssociacao:
     
     sugestaoEnem= pd.DataFrame.from_records(results, columns=Label)
     
-    print(sugestaoEnem, '\n\n')#improme resultados
+    print(sugestaoEnem, '\n\n')#imprime resultados
